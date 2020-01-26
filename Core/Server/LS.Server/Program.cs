@@ -36,7 +36,7 @@ namespace LS.Server {
             Log.Information($"Using config at path: {configPath}");
             IConfiguration config = new ConfigurationBuilder().AddJsonFile(configPath).Build();
 
-            var con = config.GetSection("config").Get<Config>();
+            var con = config.GetSection("config").Get<SConfig>();
             var url = con.ServerUrl;
             var webhostbuilder = WebHost.CreateDefaultBuilder(args)
 

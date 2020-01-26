@@ -18,7 +18,7 @@ namespace LS.Server.Core {
         private ILogger logger = Log.ForContext<ConsumerService>();
         private Kafka KafkaConfig;
 
-        public ConsumerService(IOptions<Conventions.Config> conf) {
+        public ConsumerService(IOptions<Conventions.SConfig> conf) {
             this.KafkaConfig = conf.Value.Kafka;
         }
         public async Task RunAsync(Settings settings, WebSocket socket) {

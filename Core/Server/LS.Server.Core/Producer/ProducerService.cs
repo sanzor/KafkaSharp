@@ -18,7 +18,7 @@ namespace LS.Server.Core {
        
         private ILogger logger = Log.ForContext<ProducerService>();
         private readonly Kafka kafkaSettings;
-        public ProducerService(IOptions<Conventions.Config>config) {
+        public ProducerService(IOptions<Conventions.SConfig>config) {
             var kconfig = new ConsumerConfig {
                 BootstrapServers = config.Value.Kafka.ServerUrl,
                 BrokerAddressFamily = BrokerAddressFamily.V4,
