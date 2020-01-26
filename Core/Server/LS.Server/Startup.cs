@@ -34,8 +34,8 @@ namespace LS.Server {
                     y.RequireClaim("niggar", "mic", "mare");
                 });
             });
-            LSConfig config = this.Configuration.GetSection("config").Get<LSConfig>();
-            services.Configure<LSConfig>(this.Configuration.GetSection("config"));
+            Config config = this.Configuration.GetSection("config").Get<Config>();
+            services.Configure<Config>(this.Configuration.GetSection("config"));
             services.AddControllers();
             services.AddSwaggerGen(x => {
                 x.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo {

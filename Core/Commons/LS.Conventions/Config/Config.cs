@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace LS.Conventions {
    
     [Serializable]
-    public partial class LSConfig {
+    public partial class Config {
         [JsonPropertyName("serverUrl")]
         public string ServerUrl { get; set; }
         [JsonPropertyName("swagger")]

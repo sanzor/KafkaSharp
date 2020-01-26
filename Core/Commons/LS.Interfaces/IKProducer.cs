@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace LS.Interfaces {
     public interface IKProducer {
-        Task<MessageDeliveryResult> ProduceAsync(string Topic,Message msg);
+        Task<MessageDeliveryResult> ProduceAsync(string topic,Message msg);
     }
 }

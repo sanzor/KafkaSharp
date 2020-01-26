@@ -2,11 +2,15 @@
 set t1=error
 set t2=event
 
-cd /c %~dp0
+cd /c %~dp0/kafk
 
 echo %~dp0
 echo %t1%
 echo %t2%
+
+echo Deleting and recreating topics
+call %~dp0\bin\windows\kafka-topics.bat --zookeeper localhost:2181 --delete --topic %t1%
+call %~dp0\bin\windows\kafka-topics.bat --zookeeper localhost:2181 --delete --topic %t2%
 
 echo Check working directory. Press any key to continue
 pause >nul
