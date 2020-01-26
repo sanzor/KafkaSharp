@@ -1,0 +1,110 @@
+
+// input messages, node => log server
+let msg0 = {
+    class: {
+        type: 0, // msg identifier (class content type, player action)
+        eventId: 10,
+        playerId: 200
+    },
+    data: {
+        // any data/payload
+    }
+}
+
+let msg1 = {
+    class: {
+        type: 1, // msg identifier (class content type, player group action)
+        eventId: 10,
+        groupId: 2,
+        playerId: 200
+    },
+    data: {
+        // any data/payload
+    }
+}
+
+let msg2 = {
+    class: {
+        type: 2, // msg identifier (class content type, group action)
+        eventId: 10,
+        groupId: 2
+    },
+    data: {
+        // any data/payload
+    }
+}
+
+// example data/payload
+
+let data = {
+    type: 2, // action type
+    timestamp: null,
+    lat: 44.11,
+    lng: 22.02,
+    status: true, // error check
+    message: "ok"
+} // msg.data
+
+
+
+
+
+
+//////////////////////////// example input //////////////////////////// 
+let msg = {
+    class: {
+        type: 2, 
+        eventId: 10,
+        groupId: 2
+    },
+    data: {
+        type: 2, // action type
+        timestamp: null,
+        lat: 44.11,
+        lng: 22.02,
+        status: true, // error check
+        message: "ok"
+    }
+}
+//////////////////////////// example input ////////////////////////////
+
+
+
+
+
+// output messages, log server => frontend
+let msg = {
+    stats: {
+        // data from kafka (metadata, etc)
+    },
+    message: {
+        // same as input (any msg0, msg1, msg2)
+    }
+}
+
+
+
+
+//////////////////////////// example output ////////////////////////////
+let msg = {
+    stats: {
+        // data from kafka (metadata, etc)
+        timestamp: null
+    },
+    message: {
+        class: {
+            type: 2, 
+            eventId: 10,
+            groupId: 2
+        },
+        data: {
+            type: 2, // action type
+            timestamp: null,
+            lat: 44.11,
+            lng: 22.02,
+            status: true, // error check
+            message: "ok"
+        }
+    }
+}
+//////////////////////////// example output ////////////////////////////
